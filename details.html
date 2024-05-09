@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>UEPM - Universal Environment Pollution Management</title>
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/all.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+    <style>
+        .horizontal-scroll-view {
+            width: 100%;
+            overflow-x: auto;
+            white-space: nowrap;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+
+        .dcont {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .dbox {
+            width: 100%;
+            height: 30px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+
+        .dcont .dbox + .dbox {
+            margin-top: 0;
+        }
+
+        .left-text,
+        .right-text {
+        width: 25%;
+        height: 100%;
+        line-height: 10px;
+        text-align: center;
+        float: left;
+        }
+
+        .center-image {
+        width: 50%;
+        height: 100%;
+        line-height: 10px;
+        text-align: center;
+        float: left;
+        }
+
+        .center-image img {
+        max-width: 100%;
+        max-height: 100%;
+        }
+
+        .box {
+            width: 150px;
+            height: 300px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            margin-right: 20px;
+            display: inline-block;
+        }
+
+        .box-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .box-text-top,
+        .box-text-bottom {
+            padding: 10px;
+            text-align: center;
+            font-size: xx-large;
+        }
+
+        .box-image {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box-image img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="logo" width="250" height="70" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item" id="loginsection">
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="services.html">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="classification.html">Classification</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownExplore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Explore
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                        <a class="dropdown-item" href="explore.html">Africa</a>
+                        <a class="dropdown-item" href="explore.html">Asia</a>
+                        <a class="dropdown-item" href="explore.html">Europe</a>
+                        <a class="dropdown-item" href="explore.html">North America</a>
+                        <a class="dropdown-item" href="explore.html">South America</a>
+                        <a class="dropdown-item" href="explore.html">Oceania</a>
+                     </div>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link active" href="map.html">Maps</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item" id="logoutsection">
+                  </li>
+               </ul>
+            </div>
+        </div>
+    </nav>
+	<div class="full-title">
+		<div class="container">
+			<h1 class="mt-4 mb-3">Information About <p id="ename1"></p>
+				<small>A Socially Relevant Project</small>
+			</h1>
+		</div>
+	</div>
+    <div class="container">
+		<div class="breadcrumb-main">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="index.html">Home</a>
+				</li>
+				<li class="breadcrumb-item active">Details</li>
+			</ol>
+		</div>
+
+		<div class="team-members-box">  
+			<h3 id="ename2" style="display: block; text-align: center;"></h2>
+            <h3 id="etemp" style="display: block; text-align: center;"></h2>
+            <h3 id="econdition" style="display: block; text-align: center;"></h3>
+            <h3 id="etime" style="display: block; text-align: center;"></h3>
+            <hr>
+            <h3 style="display: block; text-align: center;">Hourly Weather</h3>
+            <div class="horizontal-scroll-view" id="cont">
+            </div>
+            <hr>
+            <h3 style="display: block; text-align: center;">Daily Weather</h3>
+            <div class="dcont">
+                <div class="dbox">
+                  <div class="left-text" id="lt1"></div>
+                  <div class="center-image"><img id="img1" alt="Example Image"></div>
+                  <div class="right-text" id="rt1"></div>
+                </div>
+                <div class="dbox">
+                    <div class="left-text" id="lt2"></div>
+                    <div class="center-image"><img id="img2" alt="Example Image"></div>
+                    <div class="right-text" id="rt2"></div>
+                </div>
+                <div class="dbox">
+                    <div class="left-text" id="lt3"></div>
+                    <div class="center-image"><img id="img3" alt="Example Image"></div>
+                    <div class="right-text" id="rt3"></div>
+                </div>
+                <div class="dbox">
+                    <div class="left-text" id="lt4"></div>
+                    <div class="center-image"><img id="img4" alt="Example Image"></div>
+                    <div class="right-text" id="rt4"></div>
+                </div>
+                <div class="dbox">
+                    <div class="left-text" id="lt5"></div>
+                    <div class="center-image"><img id="img5" alt="Example Image"></div>
+                    <div class="right-text" id="rt5"></div>
+                </div>
+                <div class="dbox">
+                    <div class="left-text" id="lt6"></div>
+                    <div class="center-image"><img id="img6" alt="Example Image"></div>
+                    <div class="right-text" id="rt6"></div>
+                </div>
+                <div class="dbox">
+                    <div class="left-text" id="lt7"></div>
+                    <div class="center-image"><img id="img7" alt="Example Image"></div>
+                    <div class="right-text" id="rt7"></div>
+                </div>
+              </div>
+            <hr>      
+            <h3 style="display: block; text-align: center;">Air Quality Index</h3>
+            <h3 style="display: block; text-align: center;" id="co"></h3>
+            <h3 style="display: block; text-align: center;" id="no2"></h3>
+            <h3 style="display: block; text-align: center;" id="so2"></h3>
+            <h3 style="display: block; text-align: center;" id="o3"></h3>
+            <h3 style="display: block; text-align: center;" id="pm25"></h3>
+            <h3 style="display: block; text-align: center;" id="pm10"></h3>
+            <h3 style="display: block; text-align: center;" id="usepa"></h3>
+            <h3 style="display: block; text-align: center;" id="gbdefra"></h3>
+		</div>
+    </div>
+
+    <footer class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 col-sm-6 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+					<p class="mb10">We Are Students Of Anna University, We Are Located Out Of This University.</p>
+					<p><i class="fa fa-location-arrow"></i> Madras Institute of Technology, Radha Nagar, Chromepet, Chennai, Tamil Nadu 600044 </p>
+					<p><i class="fa fa-phone"></i> +91-7358460622 </p>
+					<p><i class="fa fa fa-envelope"></i> uepmfeedback@gmail.com </p>
+               </div>
+               <div class="col-lg-3 col-md-6 col-sm-6 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+					<ul class="footer_ul2_amrc">
+						<li>
+							<a href="#"><i class="fab fa-instagram fleft padding-right"></i> </a>
+							<p><a href="#">Instagram</a></p>
+						</li>
+						<li>
+							<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+							<p><a href="#">X (Twitter)</a></p>
+						</li>
+						<li>
+							<a href="#"><i class="fab fa-linkedin fleft padding-right"></i> </a>
+							<p><a href="#">Linkedin</a></p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+					<ul class="footer_ul_amrc">
+						<li><a href="#">Home</a></li>
+						<li><a href="register.html">Sign Up</a></li>
+						<li><a href="services.html">Services</a></li>
+						<li><a href="explore.html">Explore</a></li>
+						<li><a href="maps.html">Maps</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="about.html">About</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6 ">
+					<h5 class="headin5_amrc col_white_amrc pt2">Featured posts</h5>
+					<ul class="footer_ul_amrc">
+						<li class="media">
+							<div class="media-left">
+								<img class="img-fluid" src="images/post-img-01.jpg" alt="" />
+							</div>
+							<div class="media-body">
+								<p><a href="https://en.wikipedia.org/wiki/Air_pollution">Wikipedia's Take On Air Pollution</a></p>
+								<span>02 April 2024</span>
+							</div>
+						</li>
+						<li class="media">
+							<div class="media-left">
+								<img class="img-fluid" src="images/post-img-02.jpg" alt="" />
+							</div>
+							<div class="media-body">
+								<p><a href="https://www.icwpt.net/#:~:text=2024%209th%20International%20Conference%20on,industry%20and%20government%20is%20welcome.">Latest ICWPT Conference</a></p>
+								<span>02 April 2024</span>
+							</div>
+						</li>
+						<li class="media">
+							<div class="media-left">
+								<img class="img-fluid" src="images/post-img-03.jpg" alt="" />
+							</div>
+							<div class="media-body">
+								<p><a href="https://www.theguardian.com/science/2024/feb/18/the-perfect-storm-for-small-talk-weather-forecasters-aim-at-long-range-accuracy">Talk On Accuracy Of Weather Prediction</a></p>
+								<span>18 February 2024</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+        <div class="container">
+            <div class="footer-logo">
+				<a href="#"><img src="images/logo.png" alt="" /></a>
+			</div>
+            <p class="copyright text-center">All Rights Reserved. &copy; 2024 <a href="contact.html">UEPM</a></p>
+            <ul class="social_footer_ul">
+				<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+				<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+<script>
+    function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function logoutf() {
+            setCookie("id", "", 0);
+            setCookie("email", "", 0);
+            setCookie("password", "", 0);
+            setCookie("name", "", 0);
+            window.open("index.html", "_self");
+        }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var emailCookie = getCookie("email");
+        var passCookie = getCookie("password");
+
+        if (emailCookie && passCookie) {
+            var logoutDiv = document.getElementById("logoutsection");
+            if (logoutDiv) {
+                var logoutButton = document.createElement("a");
+                logoutButton.setAttribute("id", "logoutbutton");
+                logoutButton.setAttribute("class", "nav-link");
+                logoutButton.setAttribute("onclick", "logoutf()");
+                logoutButton.textContent = "LOGOUT";
+                logoutDiv.appendChild(logoutButton);
+            }
+            var profileDiv = document.getElementById("loginsection");
+            if (profileDiv) {
+                var profileButton = document.createElement("a");
+                profileButton.setAttribute("id", "profilebutton");
+                profileButton.setAttribute("class", "nav-link");
+                profileButton.setAttribute("onclick", "window.open('profile.php', '_self');");
+                profileButton.textContent = "PROFILE";
+                profileDiv.appendChild(profileButton);
+            }
+        } else {
+            var logoutDiv = document.getElementById("loginsection");
+            if (logoutDiv) {
+                var logoutButton = document.createElement("a");
+                logoutButton.setAttribute("id", "loginbutton");
+                logoutButton.setAttribute("class", "nav-link");
+                logoutButton.textContent = "LOGIN";
+                logoutButton.setAttribute("onclick", "window.open('log.php', '_self');");
+                logoutDiv.appendChild(logoutButton);
+            }
+        }
+
+        const urlParams = new URLSearchParams(window.location.search);
+        var cityName = urlParams.get('city');
+        cityName = cityName.replace("%20", " ");
+
+        fetch('http://api.weatherapi.com/v1/forecast.json?key=ccc27b0da92743ca9d6144900240905&q=' + cityName + '&days=7&aqi=yes&alerts=no')
+        .then(function(response) {
+            if (!response.ok) {
+            throw new Error('Request failed with status ' + response.status);
+            }
+            return response.json();
+        })
+        .then(function(data) {
+            document.getElementById("ename1").innerHTML = data.location.name + ', ' + data.location.region + ', ' + data.location.country;
+            document.getElementById("ename2").innerText = data.location.name + ', ' + data.location.region + ', ' + data.location.country;
+            document.getElementById("etemp").innerText = data.current.feelslike_c + ' °C | ' + data.current.feelslike_f + ' °F';
+            document.getElementById("econdition").innerText = data.current.condition.text;
+            document.getElementById("etime").innerText = data.location.localtime;
+
+            document.getElementById("lt1").innerText = data.forecast.forecastday[0].date;
+            document.getElementById("img1").src = 'http:' + data.forecast.forecastday[0].day.condition.icon;
+            document.getElementById("rt1").innerText = data.forecast.forecastday[0].day.avgtemp_c + ' °C';
+            
+            document.getElementById("lt2").innerText = data.forecast.forecastday[1].date;
+            document.getElementById("img2").src = 'http:' + data.forecast.forecastday[1].day.condition.icon;
+            document.getElementById("rt2").innerText = data.forecast.forecastday[1].day.avgtemp_c + ' °C';
+
+            document.getElementById("lt3").innerText = data.forecast.forecastday[2].date;
+            document.getElementById("img3").src = 'http:' + data.forecast.forecastday[2].day.condition.icon;
+            document.getElementById("rt3").innerText = data.forecast.forecastday[2].day.avgtemp_c + ' °C';
+
+            document.getElementById("lt4").innerText = data.forecast.forecastday[3].date;
+            document.getElementById("img4").src = 'http:' + data.forecast.forecastday[3].day.condition.icon;
+            document.getElementById("rt4").innerText = data.forecast.forecastday[3].day.avgtemp_c + ' °C';
+
+            document.getElementById("lt5").innerText = data.forecast.forecastday[4].date;
+            document.getElementById("img5").src = 'http:' + data.forecast.forecastday[4].day.condition.icon;
+            document.getElementById("rt5").innerText = data.forecast.forecastday[4].day.avgtemp_c + ' °C';
+
+            document.getElementById("lt6").innerText = data.forecast.forecastday[5].date;
+            document.getElementById("img6").src = 'http:' + data.forecast.forecastday[5].day.condition.icon;
+            document.getElementById("rt6").innerText = data.forecast.forecastday[5].day.avgtemp_c + ' °C';
+
+            document.getElementById("lt7").innerText = data.forecast.forecastday[6].date;
+            document.getElementById("img7").src = 'http:' + data.forecast.forecastday[6].day.condition.icon;
+            document.getElementById("rt7").innerText = data.forecast.forecastday[6].day.avgtemp_c + ' °C';
+
+            document.getElementById("co").innerText = "CO: " + data.current.air_quality.co;
+            document.getElementById("no2").innerText = "NO2: " + data.current.air_quality.no2;
+            document.getElementById("o3").innerText = "O3: " + data.current.air_quality.o3;
+            document.getElementById("so2").innerText = "SO2: " + data.current.air_quality.so2;
+            document.getElementById("pm25").innerText = "PM2.5: " + data.current.air_quality.pm2_5;
+            document.getElementById("pm10").innerText = "PM10: " + data.current.air_quality.pm10;
+            document.getElementById("usepa").innerText = "US EPA INDEX: " + data.current.air_quality["us-epa-index"];
+            document.getElementById("gbdefra").innerText = "GB DEFRA INDEX: " + data.current.air_quality["gb-defra-index"];
+
+            var cont = document.getElementById('cont');
+            for (var i = 0; i <= 23; i++) {
+                var box = document.createElement("div");
+                box.classList.add("box");
+                box.id = "hw" + i;
+
+                var boxContent = document.createElement("div");
+                boxContent.classList.add("box-content");
+
+                var boxTextTop = document.createElement("div");
+                boxTextTop.classList.add("box-text-top");
+                if (i + 1 <= 12) {
+                    boxTextTop.textContent = (i + 1) + " AM";
+                } else {
+                    boxTextTop.textContent = ((i + 1) - 12) + " PM";
+                }
+                
+
+                var boxImage = document.createElement("div");
+                boxImage.classList.add("box-image");
+                var img = document.createElement("img");
+                img.src = 'http:' + data.forecast.forecastday[0].hour[i].condition.icon;
+                boxImage.appendChild(img);
+
+                var boxTextBottom = document.createElement("div");
+                boxTextBottom.classList.add("box-text-bottom");
+                boxTextBottom.textContent = data.forecast.forecastday[0].hour[i].feelslike_c + ' °C';
+
+                boxContent.appendChild(boxTextTop);
+                boxContent.appendChild(boxImage);
+                boxContent.appendChild(boxTextBottom);
+
+                box.appendChild(boxContent);
+
+                cont.appendChild(box);
+            }
+            console.log(data);
+        })
+        .catch(function(error) {
+            console.error(error);
+        });
+    });
+</script>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

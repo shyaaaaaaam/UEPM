@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<title>Universal Environment Pollution Monitoring</title>
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/all.css" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+	</head>
+
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="logo" width="250" height="70" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="log.php">Login</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="services.html">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="classification.html">Classification</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownExplore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Explore
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                        <a class="dropdown-item" href="explore.html">Africa</a>
+                        <a class="dropdown-item" href="explore.html">Asia</a>
+                        <a class="dropdown-item" href="explore.html">Europe</a>
+                        <a class="dropdown-item" href="explore.html">North America</a>
+                        <a class="dropdown-item" href="explore.html">South America</a>
+                        <a class="dropdown-item" href="explore.html">Oceania</a>
+                     </div>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="map.html">Maps</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="about.html">About</a>
+                  </li>
+               </ul>
+            </div>
+        </div>
+    </nav>
+
+	<div class="full-title">
+		<div class="container">
+			<h1 class="mt-4 mb-3">Classification
+				<small>A Socially Relevant Project</small>
+			</h1>
+		</div>
+	</div>
+	
+    <div class="container">
+		<div class="breadcrumb-main">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="index.html">Home</a>
+				</li>
+				<li class="breadcrumb-item active">Classification</li>
+			</ol>
+		</div>
+
+        <div style="display: flex; justify-content: center; align-items: center; margin-bottom: 15px;">
+            <div class="contcontain" style="position: relative; width: auto; height: auto; background-color: #fff; border-radius: 20px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); padding: 20px;">
+                <h4 style="text-align: center;">Live Classification</h3>
+                <hr>
+                <div class="switch" style="width: 60px; height: 30px; background-color: skyblue; border-radius: 15px; cursor: pointer; overflow: hidden;" onclick="toggleSwitch()">
+                    <div class="toggle" style="width: 30px; height: 30px; background-color: #fff; border-radius: 50%; transition: transform 0.3s ease;"></div>
+                </div>
+                <br>
+                <div id="input-container"></div>
+                <div id="label-container"></div>
+                <hr>
+                <h4 style="text-align: center;">Output</h3>
+                <p id="apth" style="color: skyblue; margin-bottom: 3%;">Air Pollution: 0%</p>
+                <div id="myProgress1" style="background-color: rgb(29, 194, 189); border-radius: 3px; height: 4%; margin-bottom: 4%;">
+                    <div id="myBar1" style="width: 0%; height: 30px; background-color: rgb(0, 86, 120); margin-bottom: 10%; border-radius: 3px;"></div>
+                </div>
+                <p id="wpth" style="color: blue; margin-bottom: 3%;">Water Pollution: 0%</p>
+                <div id="myProgress2" style="background-color: rgb(48, 74, 167); border-radius: 3px; height: 4%; margin-bottom: 4%;">
+                    <div id="myBar2" style="width: 0%; height: 30px; background-color: blue; margin-bottom: 10%; border-radius: 3px;"></div>
+                </div>
+                <p id="spth" style="color: saddlebrown; margin-bottom: 3%;">Soil Pollution: 0%</p>
+                <div id="myProgress3" style="background-color: rgb(118, 59, 22); border-radius: 3px; height: 4%; margin-bottom: 4%;">
+                    <div id="myBar3" style="width: 0%; height: 30px; background-color: rgb(53, 22, 0); margin-bottom: 10%; border-radius: 3px;"></div>
+                </div>
+            </div>
+        </div>
+	</div>
+
+	<footer class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 col-sm-6 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+					<p class="mb10">We Are Students Of Anna University, We Are Located Out Of This University.</p>
+					<p><i class="fa fa-location-arrow"></i> Madras Institute of Technology, Radha Nagar, Chromepet, Chennai, Tamil Nadu 600044 </p>
+					<p><i class="fa fa-phone"></i> +91-7358460622 </p>
+					<p><i class="fa fa fa-envelope"></i> uepmfeedback@gmail.com </p>
+               </div>
+               <div class="col-lg-3 col-md-6 col-sm-6 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+					<ul class="footer_ul2_amrc">
+						<li>
+							<a href="#"><i class="fab fa-instagram fleft padding-right"></i> </a>
+							<p><a href="#">Instagram</a></p>
+						</li>
+						<li>
+							<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+							<p><a href="#">X (Twitter)</a></p>
+						</li>
+						<li>
+							<a href="#"><i class="fab fa-linkedin fleft padding-right"></i> </a>
+							<p><a href="#">Linkedin</a></p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+					<ul class="footer_ul_amrc">
+						<li><a href="#">Home</a></li>
+						<li><a href="register.html">Sign Up</a></li>
+						<li><a href="services.html">Services</a></li>
+						<li><a href="explore.html">Explore</a></li>
+						<li><a href="maps.html">Maps</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="about.html">About</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6 ">
+					<h5 class="headin5_amrc col_white_amrc pt2">Featured posts</h5>
+					<ul class="footer_ul_amrc">
+						<li class="media">
+							<div class="media-left">
+								<img class="img-fluid" src="images/post-img-01.jpg" alt="" />
+							</div>
+							<div class="media-body">
+								<p><a href="https://en.wikipedia.org/wiki/Air_pollution">Wikipedia's Take On Air Pollution</a></p>
+								<span>02 April 2024</span>
+							</div>
+						</li>
+						<li class="media">
+							<div class="media-left">
+								<img class="img-fluid" src="images/post-img-02.jpg" alt="" />
+							</div>
+							<div class="media-body">
+								<p><a href="https://www.icwpt.net/#:~:text=2024%209th%20International%20Conference%20on,industry%20and%20government%20is%20welcome.">Latest ICWPT Conference</a></p>
+								<span>02 April 2024</span>
+							</div>
+						</li>
+						<li class="media">
+							<div class="media-left">
+								<img class="img-fluid" src="images/post-img-03.jpg" alt="" />
+							</div>
+							<div class="media-body">
+								<p><a href="https://www.theguardian.com/science/2024/feb/18/the-perfect-storm-for-small-talk-weather-forecasters-aim-at-long-range-accuracy">Talk On Accuracy Of Weather Prediction</a></p>
+								<span>18 February 2024</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+        <div class="container">
+            <div class="footer-logo">
+				<a href="#"><img src="images/logo.png" alt="" /></a>
+			</div>
+            <p class="copyright text-center">All Rights Reserved. &copy; 2024 <a href="contact.html">UEPM</a></p>
+            <ul class="social_footer_ul">
+				<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+				<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        const URL = "./";
+
+        let model, maxPredictions, webcam, labelContainer;
+
+        async function init() {
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+            labelContainer = document.getElementById("label-container");
+            for (let i = 0; i < maxPredictions; i++) {
+                labelContainer.appendChild(document.createElement("div"));
+            }
+            useImageUploader();
+        }
+
+        function toggleSwitch() {
+            const toggle = document.querySelector('.toggle');
+            const switchElement = document.querySelector('.switch');
+            if (toggle.classList.contains('left')) {
+                useImageUploader();
+                toggle.style.transform = "translateX(0)";
+                toggle.classList.remove('left');
+                switchElement.style.backgroundColor = "skyblue";
+                switchElement.classList.remove('right');
+            } else {
+                useWebcam();
+                toggle.style.transform = "translateX(100%)";
+                toggle.classList.add('left');
+                switchElement.style.backgroundColor = "skyblue";
+                switchElement.classList.add('right');
+            }
+        }
+
+        async function useWebcam() {
+            document.getElementById("input-container").innerHTML = "";
+            webcam = new tmImage.Webcam(200, 200, true);
+            await webcam.setup();
+            await webcam.play();
+            window.requestAnimationFrame(loop);
+            document.getElementById("input-container").appendChild(webcam.canvas);
+        }
+
+        function useImageUploader() {
+            if (webcam) {
+                webcam.stop();
+                webcam = null;
+                document.getElementById("input-container").innerHTML = "";
+            }
+            document.getElementById("input-container").innerHTML = '<input type="file" id="imageUpload" accept="image/*"><br><div style="display: flex; justify-content: center; align-items: center;"><img id="imgup" height="300px" width="300px"></div>';
+            document.getElementById("imageUpload").addEventListener("change", handleImageUpload);
+        }
+
+        async function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const imgElement = document.getElementById('imgup');
+                const reader = new FileReader();
+                reader.onload = async function () {
+                    const img = new Image();
+                    img.src = reader.result;
+                    imgElement.src = reader.result;
+                    img.onload = async function () {
+                        predict(img);
+                    };
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        async function loop() {
+            webcam.update();
+            await predict(webcam.canvas);
+            window.requestAnimationFrame(loop);
+        }
+
+        async function predict(input) {
+            const prediction = await model.predict(input);
+            var elem01 = document.getElementById("apth");
+            elem01.textContent = "Air Pollution: " + ((prediction[0].probability.toFixed(2)) * 100) + '%';
+            var elem02 = document.getElementById("wpth");
+            elem02.textContent = "Water Pollution: " + ((prediction[1].probability.toFixed(2)) * 100) + '%';
+            var elem03 = document.getElementById("spth");
+            elem03.textContent = "Soil Pollution: " + ((prediction[2].probability.toFixed(2)) * 100) + '%';
+
+            var elem1 = document.getElementById("myBar1");
+            elem1.style.width = ((prediction[0].probability.toFixed(2)) * 100) + '%';
+            var elem2 = document.getElementById("myBar2");
+            elem2.style.width = ((prediction[1].probability.toFixed(2)) * 100) + '%';
+            var elem3 = document.getElementById("myBar3");
+            elem3.style.width = ((prediction[2].probability.toFixed(2)) * 100) + '%';
+            console.log(elem1.style.width, elem2.style.width, elem3.style.width);
+        }
+
+        init();
+    </script>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

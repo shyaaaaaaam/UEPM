@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>UEPM - Universal Environment Pollution Management</title>
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/all.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+    <style>
+        .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        }
+
+        .continent {
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 10px;
+        }
+
+        .continent h2 {
+        margin-top: 0;
+        }
+
+        ul {
+        list-style-type: none;
+        padding: 0;
+        }
+
+        ul li {
+        margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-light top-nav fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+            <img src="images/logo.png" alt="logo" width="250" height="70" />
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="fas fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item" id="loginsection">
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="services.html">Services</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="classification.html">Classification</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                     <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdownExplore" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                     Explore
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                        <a class="dropdown-item" href="explore.html">Africa</a>
+                        <a class="dropdown-item" href="explore.html">Asia</a>
+                        <a class="dropdown-item" href="explore.html">Europe</a>
+                        <a class="dropdown-item" href="explore.html">North America</a>
+                        <a class="dropdown-item" href="explore.html">South America</a>
+                        <a class="dropdown-item" href="explore.html">Oceania</a>
+                     </div>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="map.html">Maps</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="about.html">About</a>
+                  </li>
+                  <li class="nav-item" id="logoutsection">
+                  </li>
+               </ul>
+            </div>
+        </div>
+    </nav>
+	<div class="full-title">
+		<div class="container">
+			<h1 class="mt-4 mb-3">Explore
+				<small>A Socially Relevant Project</small>
+			</h1>
+		</div>
+	</div>
+    <div class="container">
+		<div class="breadcrumb-main">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item">
+					<a href="index.html">Home</a>
+				</li>
+				<li class="breadcrumb-item active">Explore</li>
+			</ol>
+		</div>
+
+        <div class="grid-container">
+            <div class="continent">
+              <h2>Africa</h2>
+              <ul>
+                <li><a href="details.html?city=Algeria">Algeria</a></li>
+                <li><a href="details.html?city=Angola">Angola</a></li>
+                <li><a href="details.html?city=Benin">Benin</a></li>
+                <li><a href="details.html?city=Botswana">Botswana</a></li>
+                <li><a href="details.html?city=Burkina Faso">Burkina Faso</a></li>
+                <li><a href="details.html?city=Burundi">Burundi</a></li>
+                <li><a href="details.html?city=Cabo Verde">Cabo Verde</a></li>
+                <li><a href="details.html?city=Cameroon">Cameroon</a></li>
+                <li><a href="details.html?city=Central African Republic">Central African Republic</a></li>
+                <li><a href="details.html?city=Chad">Chad</a></li>
+                <li><a href="details.html?city=Comoros">Comoros</a></li>
+                <li><a href="details.html?city=Ivory Coast">Ivory Coast</a></li>
+                <li><a href="details.html?city=Djibouti">Djibouti</a></li>
+                <li><a href="details.html?city=Democratic Republic of the Congo">Democratic Republic of the Congo</a></li>
+                <li><a href="details.html?city=Egypt">Egypt</a></li>
+                <li><a href="details.html?city=Equatorial Guinea">Equatorial Guinea</a></li>
+                <li><a href="details.html?city=Eritrea">Eritrea</a></li>
+                <li><a href="details.html?city=Eswatini">Eswatini</a></li>
+                <li><a href="details.html?city=Ethiopia">Ethiopia</a></li>
+                <li><a href="details.html?city=Gabon">Gabon</a></li>
+                <li><a href="details.html?city=Gambia">Gambia</a></li>
+                <li><a href="details.html?city=Ghana">Ghana</a></li>
+                <li><a href="details.html?city=Guinea">Guinea</a></li>
+                <li><a href="details.html?city=Guinea-Bissau">Guinea-Bissau</a></li>
+                <li><a href="details.html?city=Kenya">Kenya</a></li>
+                <li><a href="details.html?city=Lesotho">Lesotho</a></li>
+                <li><a href="details.html?city=Liberia">Liberia</a></li>
+                <li><a href="details.html?city=Libya">Libya</a></li>
+                <li><a href="details.html?city=Madagascar">Madagascar</a></li>
+                <li><a href="details.html?city=Malawi">Malawi</a></li>
+                <li><a href="details.html?city=Mali">Mali</a></li>
+                <li><a href="details.html?city=Mauritania">Mauritania</a></li>
+                <li><a href="details.html?city=Mauritius">Mauritius</a></li>
+                <li><a href="details.html?city=Morocco">Morocco</a></li>
+                <li><a href="details.html?city=Mozambique">Mozambique</a></li>
+                <li><a href="details.html?city=Namibia">Namibia</a></li>
+                <li><a href="details.html?city=Niger">Niger</a></li>
+                <li><a href="details.html?city=Nigeria">Nigeria</a></li>
+                <li><a href="details.html?city=Republic of the Congo">Republic of the Congo</a></li>
+                <li><a href="details.html?city=Rwanda">Rwanda</a></li>
+                <li><a href="details.html?city=Sao Tome & Principe">Sao Tome & Principe</a></li>
+                <li><a href="details.html?city=Senegal">Senegal</a></li>
+                <li><a href="details.html?city=Seychelles">Seychelles</a></li>
+                <li><a href="details.html?city=Sierra Leone">Sierra Leone</a></li>
+                <li><a href="details.html?city=Somalia">Somalia</a></li>
+                <li><a href="details.html?city=South Africa">South Africa</a></li>
+                <li><a href="details.html?city=South Sudan">South Sudan</a></li>
+                <li><a href="details.html?city=Sudan">Sudan</a></li>
+                <li><a href="details.html?city=Tanzania">Tanzania</a></li>
+                <li><a href="details.html?city=Togo">Togo</a></li>
+                <li><a href="details.html?city=Tunisia">Tunisia</a></li>
+                <li><a href="details.html?city=Uganda">Uganda</a></li>
+                <li><a href="details.html?city=Zambia">Zambia</a></li>
+                <li><a href="details.html?city=Zimbabwe">Zimbabwe</a></li>
+              </ul>
+            </div>
+        
+            <div class="continent">
+              <h2>Asia</h2>
+              <ul>
+                <li><a href="details.html?city=Afghanistan">Afghanistan</a></li>
+                <li><a href="details.html?city=Armenia">Armenia</a></li>
+                <li><a href="details.html?city=Azerbaijan">Azerbaijan</a></li>
+                <li><a href="details.html?city=Bahrain">Bahrain</a></li>
+                <li><a href="details.html?city=Bangladesh">Bangladesh</a></li>
+                <li><a href="details.html?city=Bhutan">Bhutan</a></li>
+                <li><a href="details.html?city=Brunei">Brunei</a></li>
+                <li><a href="details.html?city=Cambodia">Cambodia</a></li>
+                <li><a href="details.html?city=China">China</a></li>
+                <li><a href="details.html?city=Cyprus">Cyprus</a></li>
+                <li><a href="details.html?city=East Timor">East Timor</a></li>
+                <li><a href="details.html?city=Georgia">Georgia</a></li>
+                <li><a href="details.html?city=Hong Kong">Hong Kong</a></li>
+                <li><a href="details.html?city=India">India</a></li>
+                <li><a href="details.html?city=Indonesia">Indonesia</a></li>
+                <li><a href="details.html?city=Iran">Iran</a></li>
+                <li><a href="details.html?city=Iraq">Iraq</a></li>
+                <li><a href="details.html?city=Israel">Israel</a></li>
+                <li><a href="details.html?city=Japan">Japan</a></li>
+                <li><a href="details.html?city=Jordan">Jordan</a></li>
+                <li><a href="details.html?city=Kazakhstan">Kazakhstan</a></li>
+                <li><a href="details.html?city=Kuwait">Kuwait</a></li>
+                <li><a href="details.html?city=Kyrgyzstan">Kyrgyzstan</a></li>
+                <li><a href="details.html?city=Laos">Laos</a></li>
+                <li><a href="details.html?city=Lebanon">Lebanon</a></li>
+                <li><a href="details.html?city=Macao">Macao</a></li>
+                <li><a href="details.html?city=Malaysia">Malaysia</a></li>
+                <li><a href="details.html?city=Maldives">Maldives</a></li>
+                <li><a href="details.html?city=Mongolia">Mongolia</a></li>
+                <li><a href="details.html?city=Myanmar">Myanmar</a></li>
+                <li><a href="details.html?city=Nepal">Nepal</a></li>
+                <li><a href="details.html?city=North Korea">North Korea</a></li>
+                <li><a href="details.html?city=Oman">Oman</a></li>
+                <li><a href="details.html?city=Pakistan">Pakistan</a></li>
+                <li><a href="details.html?city=Palestine">Palestine</a></li>
+                <li><a href="details.html?city=Philippines">Philippines</a></li>
+                <li><a href="details.html?city=Qatar">Qatar</a></li>
+                <li><a href="details.html?city=Saudi Arabia">Saudi Arabia</a></li>
+                <li><a href="details.html?city=Singapore">Singapore</a></li>
+                <li><a href="details.html?city=South Korea">South Korea</a></li>
+                <li><a href="details.html?city=Sri Lanka">Sri Lanka</a></li>
+                <li><a href="details.html?city=Syria">Syria</a></li>
+                <li><a href="details.html?city=Tajikistan">Tajikistan</a></li>
+                <li><a href="details.html?city=Thailand">Thailand</a></li>
+                <li><a href="details.html?city=Turkey">Turkey</a></li>
+                <li><a href="details.html?city=Turkmenistan">Turkmenistan</a></li>
+                <li><a href="details.html?city=United Arab Emirates">United Arab Emirates</a></li>
+                <li><a href="details.html?city=Uzbekistan">Uzbekistan</a></li>
+                <li><a href="details.html?city=Vietnam">Vietnam</a></li>
+                <li><a href="details.html?city=Yemen">Yemen</a></li>
+              </ul>
+            </div>
+
+            <div class="continent">
+                <h2>Europe</h2>
+                <ul>
+                    <li><a href="details.html?city=Albania">Albania</a></li>
+                    <li><a href="details.html?city=Andorra">Andorra</a></li>
+                    <li><a href="details.html?city=Austria">Austria</a></li>
+                    <li><a href="details.html?city=Belarus">Belarus</a></li>
+                    <li><a href="details.html?city=Belgium">Belgium</a></li>
+                    <li><a href="details.html?city=Bosnia and Herzegovina">Bosnia and Herzegovina</a></li>
+                    <li><a href="details.html?city=Bulgaria">Bulgaria</a></li>
+                    <li><a href="details.html?city=Croatia">Croatia</a></li>
+                    <li><a href="details.html?city=Czech Republic">Czech Republic</a></li>
+                    <li><a href="details.html?city=Denmark">Denmark</a></li>
+                    <li><a href="details.html?city=England">England</a></li>
+                    <li><a href="details.html?city=Estonia">Estonia</a></li>
+                    <li><a href="details.html?city=Faroe Islands">Faroe Islands</a></li>
+                    <li><a href="details.html?city=Finland">Finland</a></li>
+                    <li><a href="details.html?city=France">France</a></li>
+                    <li><a href="details.html?city=Germany">Germany</a></li>
+                    <li><a href="details.html?city=Gibraltar">Gibraltar</a></li>
+                    <li><a href="details.html?city=Greece">Greece</a></li>
+                    <li><a href="details.html?city=Holy See (Vatican City State)">Holy See (Vatican City State)</a></li>
+                    <li><a href="details.html?city=Hungary">Hungary</a></li>
+                    <li><a href="details.html?city=Iceland">Iceland</a></li>
+                    <li><a href="details.html?city=Ireland">Ireland</a></li>
+                    <li><a href="details.html?city=Italy">Italy</a></li>
+                    <li><a href="details.html?city=Latvia">Latvia</a></li>
+                    <li><a href="details.html?city=Liechtenstein">Liechtenstein</a></li>
+                    <li><a href="details.html?city=Lithuania">Lithuania</a></li>
+                    <li><a href="details.html?city=Luxembourg">Luxembourg</a></li>
+                    <li><a href="details.html?city=North Macedonia">North Macedonia</a></li>
+                    <li><a href="details.html?city=Malta">Malta</a></li>
+                    <li><a href="details.html?city=Moldova">Moldova</a></li>
+                    <li><a href="details.html?city=Monaco">Monaco</a></li>
+                    <li><a href="details.html?city=Montenegro">Montenegro</a></li>
+                    <li><a href="details.html?city=Netherlands">Netherlands</a></li>
+                    <li><a href="details.html?city=Northern Ireland">Northern Ireland</a></li>
+                    <li><a href="details.html?city=Norway">Norway</a></li>
+                    <li><a href="details.html?city=Poland">Poland</a></li>
+                    <li><a href="details.html?city=Portugal">Portugal</a></li>
+                    <li><a href="details.html?city=Romania">Romania</a></li>
+                    <li><a href="details.html?city=Russian Federation">Russian Federation</a></li>
+                    <li><a href="details.html?city=San Marino">San Marino</a></li>
+                    <li><a href="details.html?city=Scotland">Scotland</a></li>
+                    <li><a href="details.html?city=Slovakia">Slovakia</a></li>
+                    <li><a href="details.html?city=Slovenia">Slovenia</a></li>
+                    <li><a href="details.html?city=Spain">Spain</a></li>
+                    <li><a href="details.html?city=Svalbard and Jan Mayen">Svalbard and Jan Mayen</a></li>
+                    <li><a href="details.html?city=Sweden">Sweden</a></li>
+                    <li><a href="details.html?city=Switzerland">Switzerland</a></li>
+                    <li><a href="details.html?city=Ukraine">Ukraine</a></li>
+                    <li><a href="details.html?city=United Kingdom">United Kingdom</a></li>
+                    <li><a href="details.html?city=Wales">Wales</a></li>
+                    <li><a href="details.html?city=Yugoslavia">Yugoslavia</a></li>
+                </ul>
+              </div>
+
+              <div class="continent">
+                <h2>North America</h2>
+                <ul>
+                    <li><a href="details.html?city=Anguilla">Anguilla</a></li>
+                    <li><a href="details.html?city=Antigua and Barbuda">Antigua and Barbuda</a></li>
+                    <li><a href="details.html?city=Aruba">Aruba</a></li>
+                    <li><a href="details.html?city=Bahamas">Bahamas</a></li>
+                    <li><a href="details.html?city=Barbados">Barbados</a></li>
+                    <li><a href="details.html?city=Belize">Belize</a></li>
+                    <li><a href="details.html?city=Bermuda">Bermuda</a></li>
+                    <li><a href="details.html?city=Canada">Canada</a></li>
+                    <li><a href="details.html?city=Cayman Islands">Cayman Islands</a></li>
+                    <li><a href="details.html?city=Costa Rica">Costa Rica</a></li>
+                    <li><a href="details.html?city=Cuba">Cuba</a></li>
+                    <li><a href="details.html?city=Dominica">Dominica</a></li>
+                    <li><a href="details.html?city=Dominican Republic">Dominican Republic</a></li>
+                    <li><a href="details.html?city=El Salvador">El Salvador</a></li>
+                    <li><a href="details.html?city=Greenland">Greenland</a></li>
+                    <li><a href="details.html?city=Grenada">Grenada</a></li>
+                    <li><a href="details.html?city=Guadeloupe">Guadeloupe</a></li>
+                    <li><a href="details.html?city=Guatemala">Guatemala</a></li>
+                    <li><a href="details.html?city=Haiti">Haiti</a></li>
+                    <li><a href="details.html?city=Honduras">Honduras</a></li>
+                    <li><a href="details.html?city=Jamaica">Jamaica</a></li>
+                    <li><a href="details.html?city=Martinique">Martinique</a></li>
+                    <li><a href="details.html?city=Mexico">Mexico</a></li>
+                    <li><a href="details.html?city=Montserrat">Montserrat</a></li>
+                    <li><a href="details.html?city=Netherlands Antilles">Netherlands Antilles</a></li>
+                    <li><a href="details.html?city=Nicaragua">Nicaragua</a></li>
+                    <li><a href="details.html?city=Panama">Panama</a></li>
+                    <li><a href="details.html?city=Puerto Rico">Puerto Rico</a></li>
+                    <li><a href="details.html?city=Saint Kitts and Nevis">Saint Kitts and Nevis</a></li>
+                    <li><a href="details.html?city=Saint Lucia">Saint Lucia</a></li>
+                    <li><a href="details.html?city=Saint Pierre and Miquelon">Saint Pierre and Miquelon</a></li>
+                    <li><a href="details.html?city=Saint Vincent and the Grenadines">Saint Vincent and the Grenadines</a></li>     
+                    <li><a href="details.html?city=Trinidad and Tobago">Trinidad and Tobago</a></li>
+                    <li><a href="details.html?city=Turks and Caicos Islands">Turks and Caicos Islands</a></li>
+                    <li><a href="details.html?city=United States">United States</a></li>
+                    <li><a href="details.html?city=Virgin Islands, British">Virgin Islands, British</a></li>
+                    <li><a href="details.html?city=Virgin Islands, U.S.">Virgin Islands, U.S.</a></li>
+                </ul>
+              </div>
+
+              <div class="continent">
+                <h2>South America</h2>
+                <ul>
+                    <li><a href="details.html?city=Argentina">Argentina</a></li>
+                    <li><a href="details.html?city=Bolivia">Bolivia</a></li>
+                    <li><a href="details.html?city=Brazil">Brazil</a></li>
+                    <li><a href="details.html?city=Chile">Chile</a></li>
+                    <li><a href="details.html?city=Colombia">Colombia</a></li>
+                    <li><a href="details.html?city=Ecuador">Ecuador</a></li>
+                    <li><a href="details.html?city=Falkland Islands">Falkland Islands</a></li>
+                    <li><a href="details.html?city=French Guiana">French Guiana</a></li>
+                    <li><a href="details.html?city=Guyana">Guyana</a></li>
+                    <li><a href="details.html?city=Paraguay">Paraguay</a></li>
+                    <li><a href="details.html?city=Peru">Peru</a></li>
+                    <li><a href="details.html?city=Suriname">Suriname</a></li>
+                    <li><a href="details.html?city=Uruguay">Uruguay</a></li>
+                    <li><a href="details.html?city=Venezuela">Venezuela</a></li>
+                </ul>
+              </div>
+
+              <div class="continent">
+                <h2>Oceania</h2>
+                <ul>
+                    <li><a href="details.html?city=American Samoa">American Samoa</a></li>
+                    <li><a href="details.html?city=Australia">Australia</a></li>
+                    <li><a href="details.html?city=Christmas Island">Christmas Island</a></li>
+                    <li><a href="details.html?city=Cocos (Keeling) Islands">Cocos (Keeling) Islands</a></li>
+                    <li><a href="details.html?city=Cook Islands">Cook Islands</a></li>
+                    <li><a href="details.html?city=Fiji Islands">Fiji Islands</a></li>
+                    <li><a href="details.html?city=French Polynesia">French Polynesia</a></li>
+                    <li><a href="details.html?city=Guam">Guam</a></li>
+                    <li><a href="details.html?city=Kiribati">Kiribati</a></li>
+                    <li><a href="details.html?city=Marshall Islands">Marshall Islands</a></li>
+                    <li><a href="details.html?city=Micronesia, Federated States of">Micronesia, Federated States of</a></li>       
+                    <li><a href="details.html?city=Nauru">Nauru</a></li>
+                    <li><a href="details.html?city=New Caledonia">New Caledonia</a></li>
+                    <li><a href="details.html?city=New Zealand">New Zealand</a></li>
+                    <li><a href="details.html?city=Niue">Niue</a></li>
+                    <li><a href="details.html?city=Norfolk Island">Norfolk Island</a></li>
+                    <li><a href="details.html?city=Northern Mariana Islands">Northern Mariana Islands</a></li>
+                    <li><a href="details.html?city=Palau">Palau</a></li>
+                    <li><a href="details.html?city=Papua New Guinea">Papua New Guinea</a></li>
+                    <li><a href="details.html?city=Pitcairn">Pitcairn</a></li>
+                    <li><a href="details.html?city=Samoa">Samoa</a></li>
+                    <li><a href="details.html?city=Solomon Islands">Solomon Islands</a></li>
+                    <li><a href="details.html?city=Tokelau">Tokelau</a></li>
+                    <li><a href="details.html?city=Tonga">Tonga</a></li>
+                    <li><a href="details.html?city=Tuvalu">Tuvalu</a></li>
+                    <li><a href="details.html?city=United States Minor Outlying Islands">United States Minor Outlying Islands</a></li>
+                    <li><a href="details.html?city=Vanuatu">Vanuatu</a></li>
+                    <li><a href="details.html?city=Wallis and Futuna">Wallis and Futuna</a></li>
+                </ul>
+              </div>
+        </div>
+    </div>
+    <br>
+    <footer class="footer">
+        <div class="container bottom_border">
+            <div class="row">
+               <div class="col-lg-3 col-md-6 col-sm-6 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+					<p class="mb10">We Are Students Of Anna University, We Are Located Out Of This University.</p>
+					<p><i class="fa fa-location-arrow"></i> Madras Institute of Technology, Radha Nagar, Chromepet, Chennai, Tamil Nadu 600044 </p>
+					<p><i class="fa fa-phone"></i> +91-7358460622 </p>
+					<p><i class="fa fa fa-envelope"></i> uepmfeedback@gmail.com </p>
+               </div>
+               <div class="col-lg-3 col-md-6 col-sm-6 col">
+					<h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+					<ul class="footer_ul2_amrc">
+						<li>
+							<a href="#"><i class="fab fa-instagram fleft padding-right"></i> </a>
+							<p><a href="#">Instagram</a></p>
+						</li>
+						<li>
+							<a href="#"><i class="fab fa-twitter fleft padding-right"></i> </a>
+							<p><a href="#">X (Twitter)</a></p>
+						</li>
+						<li>
+							<a href="#"><i class="fab fa-linkedin fleft padding-right"></i> </a>
+							<p><a href="#">Linkedin</a></p>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+					<ul class="footer_ul_amrc">
+						<li><a href="#">Home</a></li>
+						<li><a href="register.html">Sign Up</a></li>
+						<li><a href="services.html">Services</a></li>
+						<li><a href="explore.html">Explore</a></li>
+						<li><a href="maps.html">Maps</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="about.html">About</a></li>
+					</ul>
+				</div>
+				<div class="col-lg-3 col-md-6 col-sm-6 ">
+					<h5 class="headin5_amrc col_white_amrc pt2">Featured posts</h5>
+					<ul class="footer_ul_amrc">
+						<li class="media">
+							<div class="media-left">
+								<img class="img-fluid" src="images/post-img-01.jpg" alt="" />
+							</div>
+							<div class="media-body">
+								<p><a href="https://en.wikipedia.org/wiki/Air_pollution">Wikipedia's Take On Air Pollution</a></p>
+								<span>02 April 2024</span>
+							</div>
+						</li>
+						<li class="media">
+							<div class="media-left">
+								<img class="img-fluid" src="images/post-img-02.jpg" alt="" />
+							</div>
+							<div class="media-body">
+								<p><a href="https://www.icwpt.net/#:~:text=2024%209th%20International%20Conference%20on,industry%20and%20government%20is%20welcome.">Latest ICWPT Conference</a></p>
+								<span>02 April 2024</span>
+							</div>
+						</li>
+						<li class="media">
+							<div class="media-left">
+								<img class="img-fluid" src="images/post-img-03.jpg" alt="" />
+							</div>
+							<div class="media-body">
+								<p><a href="https://www.theguardian.com/science/2024/feb/18/the-perfect-storm-for-small-talk-weather-forecasters-aim-at-long-range-accuracy">Talk On Accuracy Of Weather Prediction</a></p>
+								<span>18 February 2024</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+        <div class="container">
+            <div class="footer-logo">
+				<a href="#"><img src="images/logo.png" alt="" /></a>
+			</div>
+            <p class="copyright text-center">All Rights Reserved. &copy; 2024 <a href="contact.html">UEPM</a></p>
+            <ul class="social_footer_ul">
+				<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+				<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+				<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+<script>
+    function setCookie(cname, cvalue, exdays) {
+            const d = new Date();
+            d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function logoutf() {
+            setCookie("id", "", 0);
+            setCookie("email", "", 0);
+            setCookie("password", "", 0);
+            setCookie("name", "", 0);
+            window.open("index.html", "_self");
+        }
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var emailCookie = getCookie("email");
+        var passCookie = getCookie("password");
+
+        if (emailCookie && passCookie) {
+            var logoutDiv = document.getElementById("logoutsection");
+            if (logoutDiv) {
+                var logoutButton = document.createElement("a");
+                logoutButton.setAttribute("id", "logoutbutton");
+                logoutButton.setAttribute("class", "nav-link");
+                logoutButton.setAttribute("onclick", "logoutf()");
+                logoutButton.textContent = "LOGOUT";
+                logoutDiv.appendChild(logoutButton);
+            }
+            var profileDiv = document.getElementById("loginsection");
+            if (profileDiv) {
+                var profileButton = document.createElement("a");
+                profileButton.setAttribute("id", "profilebutton");
+                profileButton.setAttribute("class", "nav-link");
+                profileButton.setAttribute("onclick", "window.open('profile.php', '_self');");
+                profileButton.textContent = "PROFILE";
+                profileDiv.appendChild(profileButton);
+            }
+        } else {
+            var logoutDiv = document.getElementById("loginsection");
+            if (logoutDiv) {
+                var logoutButton = document.createElement("a");
+                logoutButton.setAttribute("id", "loginbutton");
+                logoutButton.setAttribute("class", "nav-link");
+                logoutButton.textContent = "LOGIN";
+                logoutButton.setAttribute("onclick", "window.open('log.php', '_self');");
+                logoutDiv.appendChild(logoutButton);
+            }
+        }
+    });
+</script>
+
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
